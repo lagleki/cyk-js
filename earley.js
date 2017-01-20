@@ -89,6 +89,7 @@ function parse( words, grammar, rootRule ) {
     function scanner( state, j, grammar ) {
         var term = state['rhs'][state['dot']];
         var termPOS = grammar.partOfSpeech( words[j] );
+        console.log('termPOS = '+termPOS);
         termPOS.push( words[j] );
         for(var i in termPOS) {
             if(term == termPOS[i]) {
